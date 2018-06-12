@@ -30,9 +30,12 @@
 28
 29
 30
+31
+32
 a
 actualmente
 acuerdo
+ad
 adelante
 ademas
 además
@@ -49,6 +52,7 @@ algunas
 alguno
 algunos
 algún
+algũa
 alij
 alli
 allí
@@ -148,7 +152,13 @@ debido
 decir
 dejó
 del
+dela
 delante
+delas
+delo
+delos
+dellas
+dellos
 demasiado
 demás
 dentro
@@ -375,6 +385,7 @@ intentar
 intentas
 intento
 ir
+ix
 junto
 l
 la
@@ -392,7 +403,7 @@ lo
 los
 luego
 lugar
-mal
+m
 manera
 manifestó
 mas
@@ -431,6 +442,7 @@ míos
 n
 nada
 nadie
+não
 ni
 ninguna
 ningunas
@@ -725,6 +737,7 @@ vuestra
 vuestras
 vuestro
 vuestros
+x
 y
 ya
 yo
