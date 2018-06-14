@@ -155,6 +155,7 @@ audire > audio
 auditis > audio
 auditur > audio
 audiuntur > audio
+augere > augeo
 aurea > aureus
 ausus > audeo
 aut > aut
@@ -439,6 +440,7 @@ confiteatur > confiteor
 coni > conium
 conquisitione > conquisitio
 conscribens > conscribo
+consecrati > consecratus
 consensu > consensus
 consentire > consentio
 conservandi > conservare
@@ -615,6 +617,7 @@ edoceri > edoceo
 effectu > effectus
 effectum > effectus
 effectus > effectus
+efficit > efficio
 efficitur > efficio
 effusionem > effusio
 egit > ago
@@ -732,6 +735,7 @@ filiis > filia
 fine > finis
 finita > finio
 fleri > fleo
+fonfessio > confessio
 forma > forma
 foro > foro
 forsan > forsan
@@ -835,6 +839,7 @@ ibidem > ibidem
 idem > idem
 ideo > ideo
 idoneum > idoneus
+ieiunio > ieiunium
 igitur > igitur
 ignorabitur > ignoro
 ignorans > ignoro
@@ -1086,6 +1091,7 @@ multi > multum
 multiplicem > multiplex
 multum > multum
 mutandi > muto
+mutat > muto
 mutilatio > mutilatio
 mutilationem > mutilatio
 mutilatus > mutilo
@@ -1128,7 +1134,8 @@ notandum > noto
 notata > notatus
 notatur > noto
 notorium > notorius
-nova > novo
+nova > novus
+novo > novus
 novi > nosco
 nulla > nullus
 nullam > nullus
@@ -1220,6 +1227,7 @@ peritiam > peritia
 peritissimus > peritus
 permutatio > permutatio
 perpetuatur > perpetuo
+perpetretur > perpetro
 perplexitatem > perplexitas
 persona > persona
 personales > personalis
@@ -1306,18 +1314,19 @@ prior > prior
 prius > prior
 privilegio > privilegium
 pro > pro
-proba > proba
+proba > probo
 probabiliter > probabilis
-probandi > probare
-probante > probare
-probo > probare
-probat > probare
+probabimus > probo
+probandi > probo
+probante > probo
+probo > probo
+probat > probo
 probatio > probatio
 probationis > probatio
 probatis > probata
 probato > probatus
-probavit > probare
-probet > probare
+probavit > probo
+probet > probo
 procax > procax
 procedens > procedo
 procedere > procedo
@@ -1686,6 +1695,7 @@ vilis > vilis
 vim > vis
 vindicare > vindico
 vindictam > vindicta
+violandi > violo
 violenta > violentus
 violenter > violens
 uir > vir
