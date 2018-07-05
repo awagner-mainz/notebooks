@@ -5,7 +5,7 @@
 SUMMARIUM
 <p>
 1 Circunstantia quid nu. 1 & septem eius species, nu. Circunstantia mutans speciem necessario confitenda, nu. 3 & 19\Circunstantia homicidii & fornicationis ratione loci sacri, confitenda est, & illa etiam quae prohibita est propter diversam legem, & c. nu. 5\Circunstantia mendacii iocosi, & illa, quae extenuat peccatum, quando confitenda, nu. 6. 7 & 8\Cicrunstantia diei festi, ieiunii, orationis aut loci sacri, regulariter non necessario cnfitenda.
-nu. 9&10\Circunstantia personae & religionis quando confitenda.
+nu. 9 & 10\Circunstantia personae & religionis quando confitenda.
 nu. 11\Circunstantia conscientiae contrariae quando confitenda.
 nu. 12\Circunstantia numeri non est proprie circunstantia nu. 13, 14 & 15\PEccati numerus quando dicatur augeri per iterationem, vel continuationem, vel propositi mutationem, nu. 16.
 17 & 18\Poenitens potest vel unico solo verbo mille peccata confiteri.
@@ -86,7 +86,7 @@ arg. c. Nihil, de Praescript.
 <p>
 13[7] Octavo, quod quamvis sit laudabile confiteri circunstantias, quae ita peccatum adaugent, ut ex parvo magnum, vel ex magno maius efficiant, opinio tamen communior & probabilior habet, hoc non esse necessarium, quando augmentum illud non est in causa, ut veniale mortale fiat, vel alterius speciei mortalis, vel alio respectu; quod nos ubi supra copiose confirmavimus, & satis declaratum est nunc, per Concil.
 Trid.
-sess. 4. &.
+sess. 4. & .
 5 & can. 7 a contrario sensu, licet Marsilius in lib. 4 q. 12 ar. 1 corol. 4. communem istam sententiam restringat, ne site i locus in circunstantia, quae clare & manifeste peccatum adauget, a quo ibi discessimus ob multas variasque considerationes.
 Et quamvis post haec Dominicus Scotus asserverit idem quod Marsilius contra communem non tamen debemus ab ea discedere; Tum quia confessarii tam magnam inveniunt difficultatem in perquirendis omnibus circunstantiis mutantibus speciem etiam sine perquisitione non mutantium sed notabiliter aggravantium, ut putent quasi impossibile perquiere has, & illas :
 & Deus non obligat ad impossibile, neque ad nimis difficile, iuxta mentem Tho.
