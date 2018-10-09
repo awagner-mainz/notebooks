@@ -13,4 +13,4 @@ snowballstemmer==1.2.1
 sortedcollections==0.5.3
 unicodecsv==0.14.1
 urllib3==1.22
-wordcloud==1.3.3
+wordcloud==1.5.0
