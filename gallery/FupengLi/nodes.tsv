@@ -1,7 +1,9 @@
 from	from_color	to	to_color
 Origin	black	Draft Articles	black
 Origin	black	Foreign Legislation	black
-Origin	black	Traditional Sources	black
+Origin	black	Chinese Sources	black
+Chinese Sources	black	Party’s Doctrines	black
+Chinese Sources	black	Traditional Sources	black
 Draft Articles	black	China Draft 1923	black
 Draft Articles	black	China Draft 1936	black
 Foreign Legislation	black	Austria 1920	pink
@@ -34,9 +36,9 @@ Traditional Sources	black	Book of Mencius	yellow
 Traditional Sources	black	Book of Rites	yellow
 Traditional Sources	black	Mencius	yellow
 Traditional Sources	black	Pre-Qin Scholars	yellow
-Traditional Sources	black	Principle of People's Livelihood	yellow
-Traditional Sources	black	Founding Father's Lecture	yellow
-Traditional Sources	black	Fundamentals of National Reconstruction	yellow
+Party’s Doctrines	black	Principle of People's Livelihood	orange
+Party’s Doctrines	black	Founding Father's Lecture	orange
+Party’s Doctrines	black	Fundamentals of National Reconstruction	orange
 China Draft 1923	black	Draft 1923_1923/1	lightgreen
 China Draft 1923	black	Draft 1923_1923/2 (1)	lightgreen
 China Draft 1923	black	Draft 1923_1923/2 (2)	lightgreen
@@ -135,11 +137,11 @@ Yugoslavia 1931	pink	Yugoslavia 1931_Art.23	pink
 Yugoslavia 1931	pink	Yugoslavia 1931_Art.24	pink
 Yugoslavia 1931	pink	Yugoslavia 1931_Art.31	pink
 Yugoslavia 1931	pink	Yugoslavia 1931_Art.33	pink
-Principle of People's Livelihood	yellow	Principle of People's Livelihood_Lecture 1	yellow
-Principle of People's Livelihood	yellow	Principle of People's Livelihood_Lecture 2	yellow
-Principle of People's Livelihood	yellow	Principle of People's Livelihood_Lecture 3	yellow
-Fundamentals of National Reconstruction	black	The Fundamentals of National Reconstruction	orange
-Fundamentals of National Reconstruction	black	The International Development of China	orange
-Fundamentals of National Reconstruction	black	The Manifesto of the First National Congress of the KMT	orange
-Fundamentals of National Reconstruction	black	The Manifesto of the Tongmenghui	orange
-Fundamentals of National Reconstruction	black	The Outline of National Reconstruction	orange
+Party’s Doctrines	black	Principle of People's Livelihood_Lecture 1	orange
+Party’s Doctrines	black	Principle of People's Livelihood_Lecture 2	orange
+Party’s Doctrines	black	Principle of People's Livelihood_Lecture 3	orange
+Party’s Doctrines	black	The Fundamentals of National Reconstruction	orange
+Party’s Doctrines	black	The International Development of China	orange
+Party’s Doctrines	black	The Manifesto of the First National Congress of the KMT	orange
+Party’s Doctrines	black	The Manifesto of the Tongmenghui	orange
+Party’s Doctrines	black	The Outline of National Reconstruction	orange
