@@ -1,0 +1,264 @@
+---
+title: "Influences on the Burmese Constitution from 1948 (R Notebook)"
+author: Donal Coffey, Andreas Wagner
+date: 2020-01-18
+runtime: shiny
+output: html_notebook
+---
+
+## Housekeeping
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute
+code within the notebook, the results appear beneath the code. 
+
+In [RStudio](https://www.rstudio.com/products/rstudio/), try executing this
+chunk by clicking the *Run* button within the chunk or by placing your cursor
+inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by
+pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be
+saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to
+preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor.
+Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead,
+the output of the chunk when it was last run in the editor is displayed.
+
+## Prerequisites
+
+This notebook requires the following packages:
+
+- [janitor](https://cran.r-project.org/web/packages/janitor/index.html) for some simple cleaning
+  (even though this should be possible also e.g. with dplyr)
+- [quanteda](http://quanteda.io/) as NLP package
+- [readtext](https://readtext.quanteda.io/) (belongs to quanteda, reads files into data objects and parses metadata from filenames)
+- magrittr (belongs to the [tidyverse](https://www.tidyverse.org/) packages,
+  providing the pipe operator "%>%")
+- dplyr (belongs to the [tidyverse](https://www.tidyverse.org/) packages as well,
+  we use it for dataframe handling and manipulation)
+
+## Introduction
+
+The framers of the Burmese Constitution of 1948 had a couple of constitutions
+to draw inspiration from. This notebook documents experiments that intend to
+quantify the various influences that can be discerned.
+
+## Texts
+
+We have been working with Plaintext transcriptions that have been established
+manually for the following texts:
+
+* [1867: British North America Act](./data/1867_-_GB_-_Great_Britain_-_british_north_america_act.txt)
+* [1909: British South Africa Act](./data/1909_-_GB-SA_-_Great_Britain_-_british_south_africa_act)
+* [1935: British Government of Burma Act](./data/1935_-_GB_-_Great_Britain_-_british_government_of_burma_act.txt)
+* [1937: Constitution of Ireland](./data/1937_-_IE_-_Ireland_-_constitution_of_ireland.txt)
+
+And, of course, the "target" text:
+* [1948: Constitution of Burma](./data/1948_-_BU_-_Burma_-_constitution_of_burma.txt)
+
+These texts are all in the `data` folder.
+
+The filenames of the split files have the format
+`year_-_code_-_country_-_title_-_number.txt`, so we can use the [*readtext* package](https://readtext.quanteda.io/)
+to parse that information. This will result in a matrix `text_mx` containing
+
+- the filename in the first column (`doc_id`)
+- the actual file contents in the second column (`text`)
+- five more columns with metadata (`year`, `code`, `country`, `title`, `seqno`)
+
+
+## Alternative Approach
+
+Before starting, note there is a comparable approach using other libraries to be
+found in Kellen Funk's and [https://lincolnmullen.com/](Lincoln Mullen)'s study
+of the spread of a certain part of civil legislation in the United States. They
+use the
+[*textreuse* package](https://cloud.r-project.org/web/packages/textreuse/index.html)
+that is nowadays even complemented by a dedicated package for tokenizing texts, [tokenizers](https://lincolnmullen.com/software/tokenizers/index.html). (Here's a
+[description](https://cloud.r-project.org/web/packages/textreuse/vignettes/textreuse-pairwise.html)
+of the textreuse package and some more elaborate reasoning at <https://lincolnmullen.com/blog/an-introduction-to-the-textreuse-package-with-suggested-applications/#tracing-borrowings-within-a-corpus>.)
+
+
+## Let's get started
+
+We use the [*quanteda* package](https://quanteda.io/index.html) as the main
+NLP package. 
+
+We then proceed as follows:
+
+- build a corpus from all our constitution texts
+- segment ("re-shape" in quanteda terminology) it into sentences
+- tokenize it into words
+- remove some few stopwords
+- build a collection of (skip-)n-grams
+- build a document-feature-matrix `dfmx` with these ngrams
+
+```{r}
+# Load packages
+library(magrittr)
+library(readtext)
+library(quanteda)
+
+# === Set defaults and options ===
+options("mc.cores" = 4L)      # parallel processing
+options(scipen = 999)         # no scientific notation of numbers
+quanteda_options(verbose = TRUE,
+                 threads = 3,
+                 print_dfm_max_ndoc  = 5,
+                 print_dfm_max_nfeat = 5,
+                 language_stemmer    = "en"
+                )
+```
+
+We use the [`readtext()`](https://readtext.quanteda.io/) and [`corpus()`]() functions to create
+our corpus "mycorpus" and use the [`docvars()`](https://quanteda.io/reference/docvars.html) and [`docnames()`](https://quanteda.io/reference/docnames.html) functions to access/manipulate metadata.
+
+Then, we use the [`corpus_trim()`](https://quanteda.io/reference/corpus_trim.html) and [`corpus_reshape()`](https://quanteda.io/reference/corpus_reshape.html) functions to remove some bits and have more granular things (than whole constitutions) to compare: we segment our corpus into sentences. (Note that quanteda keeps track of which sentence belongs to which original file/constitution.)
+
+```{r}
+# Build corpus
+mycorpus <- readtext("data/constitutions/*.txt",
+                     docvarsfrom = "filenames",
+                     dvsep = "_-_",
+                     docvarnames = c("year", "code", "country", "title"),
+                     encoding = "UTF-8") %>%
+            corpus()
+
+# user shorter names for documents instead of full filenames
+docnames(mycorpus) <- docvars(mycorpus, "code")
+
+# segment into sentences and exclude sentences shorter than 4 words
+mysentences <- corpus_trim(mycorpus, what = "sentences", min_ntoken = 4) %>%
+               corpus_reshape(mycorpus,
+                              to = "sentences",
+                              use_docvars = TRUE)
+
+```
+
+Next, we want to compare the sentences based on the words they contain, so we prepare
+a "mytokens" object with quanteda's [`tokens()`](https://quanteda.io/reference/tokens.html)
+function. In the process we are removing certain tokens that we consider noise,
+like punctuation and numbers. We explicitly remove some, very few, stopwords with the
+[`tokens_remove()`](https://quanteda.io/reference/tokens_select.html) function. (In tidy
+terminology: we "select" all but a few variables.) Also, we are normalizing tokens into lower-case stems ( [`tokens_tolower()`](https://quanteda.io/reference/tokens_tolower.html) and [`tokens_wordstem()`](https://quanteda.io/reference/tokens_wordstem.html)).
+
+From this "mytokens" object, we then build "mydfm", a document-feature matrix
+( [`dfm()`](https://quanteda.io/reference/dfm.html), [tutorial](https://tutorials.quanteda.io/basic-operations/dfm/dfm/))
+with token 3-grams:
+
+```{r}
+mytokens <- tokens(mysentences,
+                   what = "word",
+                   remove_numbers = TRUE,
+                   remove_punct = TRUE,
+                   include_docvars = TRUE) %>%
+            tokens_remove(c("the", "of", "and")) %>%
+            tokens_tolower() %>%
+            tokens_wordstem()
+  
+mydfm <-  dfm(mytokens,
+              what = "word",
+              ngrams = 3L,
+              remove_numbers = TRUE,
+              stem = TRUE)
+```
+
+Here is some summary information and stats:
+
+```{r}
+summary(mydfm)
+topfeatures(mydfm)
+```
+
+Now we can try *quanteda*'s [similarity functions](https://quanteda.io/reference/textstat_simil.html). 
+(For more about similarity measures, see <http://article.nadiapub.com/IJDTA/vol10_no2/2.pdf>,
+<http://sibiryakov.eu/2011/11/similarity-metrics/>, <https://towardsdatascience.com/familiarity-with-coefficients-of-similarity-73697d357acf>, <https://cran.r-project.org/web/packages/proxy/vignettes/overview.pdf>.)
+
+We use all Burma sentences as reference features:
+
+```{r}
+# This is our similarity measure
+similAlgo    <- "ejaccard"    # one of "correlation", "cosine",
+                              #    "jaccard", "ejaccard",
+                              #    "dice", "edice", "hamman",
+                              #    "simple matching"
+
+# This is our similarity threshold
+minSimil <- 0.4
+
+mysimil <- textstat_simil(mydfm[!grepl("^BU\\.", docnames(mydfm)),],
+                          mydfm[grep("^BU\\.", docnames(mydfm)),],
+                          margin = "documents", # "documents" or "features"
+                          method = similAlgo,
+                          min_simil = minSimil)  
+```
+
+Make results available in a nice data frame:
+
+```{r}
+# First get and clean a matrix of results:
+library(janitor)
+library(dplyr)
+
+# create matrix
+mysimilmx <- as.matrix(mysimil,
+                  row.names = docnames(mydfm)[grep("^BU\\.", docnames(mydfm))]) %>%
+             remove_empty(c("rows", "cols"))
+
+# transpose matrix so Burma sentences are observed wrt their similaity to other texts
+mysimilmx_t <- t(mysimilmx)
+
+# Then, build a data frame and add more columns with information
+mysimildf <- as.data.frame(mysimilmx_t)
+
+mysimildf$id_bu     <- rownames(mysimildf)
+mysimildf$text_bu   <- mysentences[mysimildf$id_bu]
+```
+
+Finally, we want to create reports, and these should not have just the sentence
+ids and similarity values, but also the actual texts themselves... Also, we want
+the reports to contain id, text and similarity value for the 3 most similar
+sources for every sentence of the target constitution.
+
+```{r}
+# create a dataframe from similarity results and make it have good names
+myresultdf <- data.frame(mysimildf$id_bu)
+names(myresultdf)[names(myresultdf) == "mysimildf.id_bu"] <- "id_bu"
+
+# add a text_bu column with the respective text
+myresultdf$text_bu <- mysimildf$text_bu
+
+# find 3 best sources
+five_largest <- apply(mysimildf[, 1:(ncol(mysimildf) - 2)], 1, FUN = function(x) sort(tail(sort(x), 3), decreasing = TRUE))
+
+# For source_1 to source_3, fill in id, text, and similarity value of the best sources
+myresultdf$id_src_1 <- unlist(lapply(five_largest, function(l) if (length(l) > 0) { names(l)[1] } else return(NA) ), use.names = FALSE )
+myresultdf$text_src_1    <- mysentences[unlist(lapply(myresultdf$id_src_1, function(l) {l[[1]]}), use.names = FALSE )]
+myresultdf$simil_value_1 <- unlist(lapply(five_largest, function(l) if (length(l) > 0) { l[[1]] } else return(NA) ), use.names = FALSE )
+
+myresultdf$id_src_2      <- unlist(lapply(five_largest, function(l) if (length(l) > 1) { names(l)[2] } else return(NA) ), use.names = FALSE )
+myresultdf$text_src_2    <- mysentences[unlist(lapply(myresultdf$id_src_2, function(l) {l[[1]]}), use.names = FALSE )]
+myresultdf$simil_value_2 <- unlist(lapply(five_largest, function(l) if (length(l) > 1) { l[[2]] } else return(NA) ), use.names = FALSE )
+
+myresultdf$id_src_3      <- unlist(lapply(five_largest, function(l) if (length(l) > 2) { names(l)[3] } else return(NA) ), use.names = FALSE )
+myresultdf$text_src_3    <- mysentences[unlist(lapply(myresultdf$id_src_3, function(l) {l[[1]]}), use.names = FALSE )]
+myresultdf$simil_value_3 <- unlist(lapply(five_largest, function(l) if (length(l) > 2) { l[[3]] } else return(NA) ), use.names = FALSE )
+```
+
+Now we sort and save two views.
+
+```{r}
+# Finally, sort/"arrange" two ways: by similarity value and by document id
+myresultdf_by_value  <- arrange(myresultdf, desc(simil_value_1))
+myresultdf_by_id_bu  <- arrange(myresultdf, as.integer(sub("BU.", "", id_bu)))
+
+# And save to two csv files
+write.table(myresultdf_by_value, sep = "\t", eol = "\n", fileEncoding = "UTF-8", file = "out/simil_by_value.tsv", row.names = FALSE)
+write.table(myresultdf_by_id_bu, sep = "\t", eol = "\n", fileEncoding = "UTF-8", file = "out/simil_by_text_order.tsv", row.names = FALSE)
+```
