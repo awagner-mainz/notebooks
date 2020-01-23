@@ -34,9 +34,9 @@ the output of the chunk when it was last run in the editor is displayed.
 
 This notebook requires the following packages:
 
+- [quanteda](http://quanteda.io/) as NLP package
 - [janitor](https://cran.r-project.org/web/packages/janitor/index.html) for some simple cleaning
   (even though this should be possible also e.g. with dplyr)
-- [quanteda](http://quanteda.io/) as NLP package
 - [readtext](https://readtext.quanteda.io/) (belongs to quanteda, reads files into data objects and parses metadata from filenames)
 - magrittr (belongs to the [tidyverse](https://www.tidyverse.org/) packages,
   providing the pipe operator "%>%")
@@ -65,8 +65,8 @@ And, of course, the "target" text:
 These texts are all in the `data` folder.
 
 The filenames of the split files have the format
-`year_-_code_-_country_-_title_-_number.txt`, so we can use the [*readtext* package](https://readtext.quanteda.io/)
-to parse that information. This will result in a matrix `text_mx` containing
+`year_-_code_-_country_-_title.txt`, so we can use the [*readtext* package](https://readtext.quanteda.io/)
+to parse that information.
 
 - the filename in the first column (`doc_id`)
 - the actual file contents in the second column (`text`)
@@ -96,7 +96,7 @@ We then proceed as follows:
 - segment ("re-shape" in quanteda terminology) it into sentences
 - tokenize it into words
 - remove some few stopwords
-- build a collection of (skip-)n-grams
+- build a collection of 3-grams
 - build a document-feature-matrix `dfmx` with these ngrams
 
 ```{r}
@@ -164,7 +164,6 @@ mytokens <- tokens(mysentences,
   
 mydfm <-  dfm(mytokens,
               what = "word",
-              ngrams = 3L,
               remove_numbers = TRUE,
               stem = TRUE)
 ```
@@ -184,7 +183,7 @@ We use all Burma sentences as reference features:
 
 ```{r}
 # This is our similarity measure
-similAlgo    <- "ejaccard"    # one of "correlation", "cosine",
+similAlgo    <- "dice"    # one of "correlation", "cosine",
                               #    "jaccard", "ejaccard",
                               #    "dice", "edice", "hamman",
                               #    "simple matching"
