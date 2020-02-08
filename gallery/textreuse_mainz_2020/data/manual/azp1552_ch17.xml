@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="http://files.salamanca.school/saltei.rng"
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://files.salamanca.school/saltei.rng"
     type="application/xml"
     schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0"
-     xml:id="Azp1552_a">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="Azp1552_a">
     <teiHeader xml:lang="de">
         <fileDesc>
             <titleStmt>
