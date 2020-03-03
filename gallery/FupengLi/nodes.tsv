@@ -2,146 +2,147 @@ from	from_color	to	to_color
 Origin	black	Draft Articles	black
 Origin	black	Foreign Legislation	black
 Origin	black	Chinese Sources	black
-Chinese Sources	black	Party’s Doctrines	black
-Chinese Sources	black	Traditional Sources	black
+Chinese Sources	black	Chinese Traditions	black
+Chinese Sources	black	Party‘s Doctrines	black
+Chinese Traditions	black	Ancient Poetry	yellow
+Chinese Traditions	black	Book of Changes	yellow
+Chinese Traditions	black	Book of Han	yellow
+Chinese Traditions	black	Book of Mencius	yellow
+Chinese Traditions	black	Book of Rites	yellow
+Chinese Traditions	black	Pre-Qin Scholars	yellow
+Party‘s Doctrines	black	Principle of People's Livelihood	dodgerblue
+Party‘s Doctrines	black	Founding Father's Lecture	dodgerblue
+Party‘s Doctrines	black	Principle of People's Livelihood	dodgerblue
+Party‘s Doctrines	black	The Fundamentals of National Reconstruction	dodgerblue
+Party‘s Doctrines	black	The International Development of China	dodgerblue
+Party‘s Doctrines	black	The Manifesto of the First National Congress of the KMT	dodgerblue
+Party‘s Doctrines	black	The Manifesto of the Tongmenghui	dodgerblue
+Party‘s Doctrines	black	The Outline of National Reconstruction	dodgerblue
+Principle of People's Livelihood	dodgerblue	Principle of People's Livelihood_Lecture 1	dodgerblue
+Principle of People's Livelihood	dodgerblue	Principle of People's Livelihood_Lecture 2	dodgerblue
+Principle of People's Livelihood	dodgerblue	Principle of People's Livelihood_Lecture 3	dodgerblue
 Draft Articles	black	China Draft 1923	black
 Draft Articles	black	China Draft 1936	black
-Foreign Legislation	black	Austria 1920	pink
-Foreign Legislation	black	Constitutions of Modern Nations	pink
-Foreign Legislation	black	Czechoslovakia 1920	pink
-Foreign Legislation	black	Ecuador 1929	pink
-Foreign Legislation	black	Estonia 1920	pink
-Foreign Legislation	black	Far Eastern Republic/Chita 1920	pink
-Foreign Legislation	black	Germany 1919	pink
-Foreign Legislation	black	Honduras 1924	pink
-Foreign Legislation	black	Lithuania 1928	pink
-Foreign Legislation	black	Mexico 1917	pink
-Foreign Legislation	black	Netherlands 1922	pink
-Foreign Legislation	black	Peru 1933	pink
-Foreign Legislation	black	Poland 1921	pink
-Foreign Legislation	black	Portugal 1911	pink
-Foreign Legislation	black	Portugal 1933	pink
-Foreign Legislation	black	Romania 1923	pink
-Foreign Legislation	black	Spain 1931	pink
-Foreign Legislation	black	Switzerland 1874	pink
-Foreign Legislation	black	The Covenant of the League of Nations 1920	pink
-Foreign Legislation	black	The Soviet Russia 1918	pink
-Foreign Legislation	black	The Soviet Union 1936	pink
-Foreign Legislation	black	Treaty of Versailles	pink
-Foreign Legislation	black	Yugoslavia 1931	pink
-Traditional Sources	black	Ancient Poetry	yellow
-Traditional Sources	black	Book of Changes	yellow
-Traditional Sources	black	Book of Han	yellow
-Traditional Sources	black	Book of Mencius	yellow
-Traditional Sources	black	Book of Rites	yellow
-Traditional Sources	black	Mencius	yellow
-Traditional Sources	black	Pre-Qin Scholars	yellow
-Party’s Doctrines	black	Principle of People's Livelihood	orange
-Party’s Doctrines	black	Founding Father's Lecture	orange
-Party’s Doctrines	black	Fundamentals of National Reconstruction	orange
-China Draft 1923	black	Draft 1923_1923/1	lightgreen
-China Draft 1923	black	Draft 1923_1923/2 (1)	lightgreen
-China Draft 1923	black	Draft 1923_1923/2 (2)	lightgreen
-China Draft 1923	black	Draft 1923_1923/2 (3)	lightgreen
-China Draft 1923	black	Draft 1923_1923/2 (4)	lightgreen
-China Draft 1923	black	Draft 1923_1923/3 (1)	lightgreen
-China Draft 1923	black	Draft 1923_1923/3 (2)	lightgreen
-China Draft 1923	black	Draft 1923_1923/3 (3)	lightgreen
-China Draft 1923	black	Draft 1923_1923/4	lightgreen
-China Draft 1923	black	Draft 1923_1923/5	lightgreen
-China Draft 1923	black	Draft 1923_1923/6	lightgreen
-China Draft 1923	black	Draft 1923_1923/7	lightgreen
-China Draft 1936	black	Draft 1936_1936/116	darkgreen
-China Draft 1936	black	Draft 1936_1936/117	darkgreen
-China Draft 1936	black	Draft 1936_1936/118	darkgreen
-China Draft 1936	black	Draft 1936_1936/119	darkgreen
-China Draft 1936	black	Draft 1936_1936/120	darkgreen
-China Draft 1936	black	Draft 1936_1936/121	darkgreen
-China Draft 1936	black	Draft 1936_1936/122	darkgreen
-China Draft 1936	black	Draft 1936_1936/123	darkgreen
-China Draft 1936	black	Draft 1936_1936/124	darkgreen
-China Draft 1936	black	Draft 1936_1936/125	darkgreen
-China Draft 1936	black	Draft 1936_1936/126	darkgreen
-China Draft 1936	black	Draft 1936_1936/127	darkgreen
-China Draft 1936	black	Draft 1936_1936/128	darkgreen
-China Draft 1936	black	Draft 1936_1936/129	darkgreen
-China Draft 1936	black	Draft 1936_1936/130	darkgreen
-China Draft 1936	black	Draft 1936_1936/Introduction	darkgreen
-Austria 1920	pink	Austria 1920_Art.11 (2)	pink
-Czechoslovakia 1920	pink	Czechoslovakia 1920_Art.108	pink
-Czechoslovakia 1920	pink	Czechoslovakia 1920_Art.109	pink
-Ecuador 1929	pink	Ecuador 1929_Art.151 (14)	pink
-Estonia 1920	pink	Estonia 1920_Art.18 (3)	pink
-Germany 1919	pink	Germany 1919_Art.151	pink
-Germany 1919	pink	Germany 1919_Art.152	pink
-Germany 1919	pink	Germany 1919_Art.153	pink
-Germany 1919	pink	Germany 1919_Art.154 (2)	pink
-Germany 1919	pink	Germany 1919_Art.155 (1)	pink
-Germany 1919	pink	Germany 1919_Art.155 (4)	pink
-Germany 1919	pink	Germany 1919_Art.156	pink
-Germany 1919	pink	Germany 1919_Art.157	pink
-Germany 1919	pink	Germany 1919_Art.158	pink
-Germany 1919	pink	Germany 1919_Art.158 (1)	pink
-Germany 1919	pink	Germany 1919_Art.159	pink
-Germany 1919	pink	Germany 1919_Art.160	pink
-Germany 1919	pink	Germany 1919_Art.161	pink
-Germany 1919	pink	Germany 1919_Art.162	pink
-Germany 1919	pink	Germany 1919_Art.163	pink
-Germany 1919	pink	Germany 1919_Art.164	pink
-Germany 1919	pink	Germany 1919_Art.165	pink
-Germany 1919	pink	Germany 1919_Economic Life	pink
-Honduras 1924	pink	Honduras 1924_Art.175	pink
-Honduras 1924	pink	Honduras 1924_Art.176	pink
-Honduras 1924	pink	Honduras 1924_Art.177	pink
-Lithuania 1928	pink	Lithuania 1928_Art.98	pink
-Lithuania 1928	pink	Lithuania 1928_Art.98 (2)	pink
-Lithuania 1928	pink	Lithuania 1928_Art.99 (2)	pink
-Mexico 1917	pink	Mexico 1917_Art.123 (1-30)	pink
-Mexico 1917	pink	Mexico 1917_Art.123 (29)	pink
-Mexico 1917	pink	Mexico 1917_Art.27 (4)	pink
-Netherlands 1922	pink	Netherlands 1922_Art.196	pink
-Peru 1933	pink	Peru 1933_Art.42	pink
-Peru 1933	pink	Peru 1933_Art.43	pink
-Peru 1933	pink	Peru 1933_Art.44	pink
-Peru 1933	pink	Peru 1933_Art.45	pink
-Peru 1933	pink	Peru 1933_Art.46	pink
-Poland 1921	pink	Poland 1921_Art.102	pink
-Poland 1921	pink	Poland 1921_Art.103	pink
-Poland 1921	pink	Poland 1921_Art.68	pink
-Poland 1921	pink	Poland 1921_Art.99	pink
-Poland 1921	pink	Poland 1921_Art.99 (2)	pink
-Portugal 1911	pink	Portugal 1911_Art.25	pink
-Portugal 1933	pink	Portugal 1933_Art.49	pink
-Romania 1923	pink	Romania 1923_Art.19	pink
-Romania 1923	pink	Romania 1923_Art.21	pink
-Spain 1931	pink	Spain 1931_Art.46	pink
-Spain 1931	pink	Spain 1931_Art.46 (2)	pink
-Switzerland 1874	pink	Switzerland 1874_Art.34	pink
-Switzerland 1874	pink	Switzerland 1874_Art.34 (2)	pink
-The Covenant of the League of Nations 1920	pink	The Covenant of the League of Nations 1920_Art.23	pink
-The Soviet Russia 1918	pink	The Soviet Russia 1918_Art.10	pink
-The Soviet Russia 1918	pink	The Soviet Russia 1918_Art.18	pink
-The Soviet Russia 1918	pink	The Soviet Russia 1918_Art.64	pink
-The Soviet Union 1936	pink	The Soviet Union 1936_Art.118	pink
-The Soviet Union 1936	pink	The Soviet Union 1936_Art.119	pink
-The Soviet Union 1936	pink	The Soviet Union 1936_Art.120	pink
-The Soviet Union 1936	pink	The Soviet Union 1936_Art.122 (2)	pink
-The Soviet Union 1936	pink	The Soviet Union 1936_Art.125	pink
-The Soviet Union 1936	pink	The Soviet Union 1936_Art.126	pink
-The Soviet Union 1936	pink	The Soviet Union 1936_Art.7	pink
-The Soviet Union 1936	pink	The Soviet Union 1936_Art.9	pink
-The Soviet Union 1936	pink	The Soviet Union 1936_Chapter one	pink
-Yugoslavia 1931	pink	Yugoslavia 1931_Art.117 (4)	pink
-Yugoslavia 1931	pink	Yugoslavia 1931_Art.22	pink
-Yugoslavia 1931	pink	Yugoslavia 1931_Art.23	pink
-Yugoslavia 1931	pink	Yugoslavia 1931_Art.24	pink
-Yugoslavia 1931	pink	Yugoslavia 1931_Art.31	pink
-Yugoslavia 1931	pink	Yugoslavia 1931_Art.33	pink
-Party’s Doctrines	black	Principle of People's Livelihood_Lecture 1	orange
-Party’s Doctrines	black	Principle of People's Livelihood_Lecture 2	orange
-Party’s Doctrines	black	Principle of People's Livelihood_Lecture 3	orange
-Party’s Doctrines	black	The Fundamentals of National Reconstruction	orange
-Party’s Doctrines	black	The International Development of China	orange
-Party’s Doctrines	black	The Manifesto of the First National Congress of the KMT	orange
-Party’s Doctrines	black	The Manifesto of the Tongmenghui	orange
-Party’s Doctrines	black	The Outline of National Reconstruction	orange
+Foreign Legislation	black	CM	black
+Foreign Legislation	black	TV	black
+Foreign Legislation	black	Austria 1920	mistyrose
+Foreign Legislation	black	Czechoslovakia 1920	mistyrose
+Foreign Legislation	black	Ecuador 1929	mistyrose
+Foreign Legislation	black	Estonia 1920	mistyrose
+Foreign Legislation	black	Far Eastern Republic/Chita 1920	mistyrose
+Foreign Legislation	black	Germany 1919	lightcoral
+Foreign Legislation	black	Honduras 1924	lightsalmon
+Foreign Legislation	black	Lithuania 1928	lightsalmon
+Foreign Legislation	black	Mexico 1917	lightsalmon
+Foreign Legislation	black	Netherlands 1922	lightsalmon
+Foreign Legislation	black	Peru 1933	lightsalmon
+Foreign Legislation	black	Poland 1921	lightsalmon
+Foreign Legislation	black	Portugal 1911	lightsalmon
+Foreign Legislation	black	Portugal 1933	lightsalmon
+Foreign Legislation	black	Romania 1923	lightsalmon
+Foreign Legislation	black	Spain 1931	lightsalmon
+Foreign Legislation	black	Switzerland 1874	lightsalmon
+Foreign Legislation	black	The Covenant of the League of Nations 1920	lightsalmon
+Foreign Legislation	black	The Soviet Russia 1918	indianred
+Foreign Legislation	black	The Soviet Union 1936	firebrick
+Foreign Legislation	black	Yugoslavia 1931	darksalmon
+China Draft 1923	black	Draft 1923_1923/1	limegreen
+China Draft 1923	black	Draft 1923_1923/2 (1)	limegreen
+China Draft 1923	black	Draft 1923_1923/2 (2)	limegreen
+China Draft 1923	black	Draft 1923_1923/2 (3)	limegreen
+China Draft 1923	black	Draft 1923_1923/2 (4)	limegreen
+China Draft 1923	black	Draft 1923_1923/3 (1)	limegreen
+China Draft 1923	black	Draft 1923_1923/3 (2)	limegreen
+China Draft 1923	black	Draft 1923_1923/3 (3)	limegreen
+China Draft 1923	black	Draft 1923_1923/4	limegreen
+China Draft 1923	black	Draft 1923_1923/5	limegreen
+China Draft 1923	black	Draft 1923_1923/6	limegreen
+China Draft 1923	black	Draft 1923_1923/7	limegreen
+China Draft 1936	black	Draft 1936_1936/116	red
+China Draft 1936	black	Draft 1936_1936/117	red
+China Draft 1936	black	Draft 1936_1936/118	red
+China Draft 1936	black	Draft 1936_1936/119	red
+China Draft 1936	black	Draft 1936_1936/120	red
+China Draft 1936	black	Draft 1936_1936/121	red
+China Draft 1936	black	Draft 1936_1936/122	red
+China Draft 1936	black	Draft 1936_1936/123	red
+China Draft 1936	black	Draft 1936_1936/124	red
+China Draft 1936	black	Draft 1936_1936/125	red
+China Draft 1936	black	Draft 1936_1936/126	red
+China Draft 1936	black	Draft 1936_1936/127	red
+China Draft 1936	black	Draft 1936_1936/128	red
+China Draft 1936	black	Draft 1936_1936/129	red
+China Draft 1936	black	Draft 1936_1936/130	red
+China Draft 1936	black	Draft 1936_1936/Introduction	red
+Austria 1920	pink	Austria 1920_Art.11 (2)	mistyrose
+CM	black	Constitutions of Modern Nations	mistyrose
+Czechoslovakia 1920	pink	Czechoslovakia 1920_Art.108	mistyrose
+Czechoslovakia 1920	pink	Czechoslovakia 1920_Art.109	mistyrose
+Ecuador 1929	pink	Ecuador 1929_Art.151 (14)	mistyrose
+Estonia 1920	pink	Estonia 1920_Art.18 (3)	mistyrose
+Germany 1919	pink	Germany 1919_Art.151	lightcoral
+Germany 1919	pink	Germany 1919_Art.152	lightcoral
+Germany 1919	pink	Germany 1919_Art.153	lightcoral
+Germany 1919	pink	Germany 1919_Art.154 (2)	lightcoral
+Germany 1919	pink	Germany 1919_Art.155 (1)	lightcoral
+Germany 1919	pink	Germany 1919_Art.155 (4)	lightcoral
+Germany 1919	pink	Germany 1919_Art.156	lightcoral
+Germany 1919	pink	Germany 1919_Art.157	lightcoral
+Germany 1919	pink	Germany 1919_Art.158	lightcoral
+Germany 1919	pink	Germany 1919_Art.158 (1)	lightcoral
+Germany 1919	pink	Germany 1919_Art.159	lightcoral
+Germany 1919	pink	Germany 1919_Art.160	lightcoral
+Germany 1919	pink	Germany 1919_Art.161	lightcoral
+Germany 1919	pink	Germany 1919_Art.162	lightcoral
+Germany 1919	pink	Germany 1919_Art.163	lightcoral
+Germany 1919	pink	Germany 1919_Art.164	lightcoral
+Germany 1919	pink	Germany 1919_Art.165	lightcoral
+Germany 1919	pink	Germany 1919_Economic Life	lightcoral
+Honduras 1924	pink	Honduras 1924_Art.175	lightsalmon
+Honduras 1924	pink	Honduras 1924_Art.176	lightsalmon
+Honduras 1924	pink	Honduras 1924_Art.177	lightsalmon
+Lithuania 1928	pink	Lithuania 1928_Art.98	lightsalmon
+Lithuania 1928	pink	Lithuania 1928_Art.98 (2)	lightsalmon
+Lithuania 1928	pink	Lithuania 1928_Art.99 (2)	lightsalmon
+Mexico 1917	pink	Mexico 1917_Art.123 (1-30)	lightsalmon
+Mexico 1917	pink	Mexico 1917_Art.123 (29)	lightsalmon
+Mexico 1917	pink	Mexico 1917_Art.27 (4)	lightsalmon
+Netherlands 1922	pink	Netherlands 1922_Art.196	lightsalmon
+Peru 1933	pink	Peru 1933_Art.42	lightsalmon
+Peru 1933	pink	Peru 1933_Art.43	lightsalmon
+Peru 1933	pink	Peru 1933_Art.44	lightsalmon
+Peru 1933	pink	Peru 1933_Art.45	lightsalmon
+Peru 1933	pink	Peru 1933_Art.46	lightsalmon
+Poland 1921	pink	Poland 1921_Art.102	lightsalmon
+Poland 1921	pink	Poland 1921_Art.103	lightsalmon
+Poland 1921	pink	Poland 1921_Art.68	lightsalmon
+Poland 1921	pink	Poland 1921_Art.99	lightsalmon
+Poland 1921	pink	Poland 1921_Art.99 (2)	lightsalmon
+Portugal 1911	pink	Portugal 1911_Art.25	lightsalmon
+Portugal 1933	pink	Portugal 1933_Art.49	lightsalmon
+Romania 1923	pink	Romania 1923_Art.19	lightsalmon
+Romania 1923	pink	Romania 1923_Art.21	lightsalmon
+Spain 1931	pink	Spain 1931_Art.46	lightsalmon
+Spain 1931	pink	Spain 1931_Art.46 (2)	lightsalmon
+Switzerland 1874	pink	Switzerland 1874_Art.34	lightsalmon
+Switzerland 1874	pink	Switzerland 1874_Art.34 (2)	lightsalmon
+The Covenant of the League of Nations 1920	pink	The Covenant of the League of Nations 1920_Art.23	lightsalmon
+The Soviet Russia 1918	pink	The Soviet Russia 1918_Art.10	indianred
+The Soviet Russia 1918	pink	The Soviet Russia 1918_Art.18	indianred
+The Soviet Russia 1918	pink	The Soviet Russia 1918_Art.64	indianred
+The Soviet Union 1936	pink	The Soviet Union 1936_Art.118	firebrick
+The Soviet Union 1936	pink	The Soviet Union 1936_Art.119	firebrick
+The Soviet Union 1936	pink	The Soviet Union 1936_Art.120	firebrick
+The Soviet Union 1936	pink	The Soviet Union 1936_Art.122 (2)	firebrick
+The Soviet Union 1936	pink	The Soviet Union 1936_Art.125	firebrick
+The Soviet Union 1936	pink	The Soviet Union 1936_Art.126	firebrick
+The Soviet Union 1936	pink	The Soviet Union 1936_Art.7	firebrick
+The Soviet Union 1936	pink	The Soviet Union 1936_Art.9	firebrick
+The Soviet Union 1936	pink	The Soviet Union 1936_Chapter one	firebrick
+TV	black	Treaty of Versailles	darksalmon
+Yugoslavia 1931	pink	Yugoslavia 1931_Art.117 (4)	darksalmon
+Yugoslavia 1931	pink	Yugoslavia 1931_Art.22	darksalmon
+Yugoslavia 1931	pink	Yugoslavia 1931_Art.23	darksalmon
+Yugoslavia 1931	pink	Yugoslavia 1931_Art.24	darksalmon
+Yugoslavia 1931	pink	Yugoslavia 1931_Art.31	darksalmon
+Yugoslavia 1931	pink	Yugoslavia 1931_Art.33	darksalmon
