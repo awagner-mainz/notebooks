@@ -132,13 +132,17 @@ mycorpus <- readtext("data/constitutions/*.txt",
 
 # user shorter names for documents instead of full filenames
 docnames(mycorpus) <- docvars(mycorpus, "code")
+```
 
+```{r}
 # segment into sentences and exclude sentences shorter than 4 words
-mysentences <- corpus_trim(mycorpus, what = "sentences", min_ntoken = 4) %>%
+mysentences <- # corpus_trim(mycorpus, what = "sentences", min_ntoken = 4) %>%
                corpus_reshape(mycorpus,
                               to = "sentences",
                               use_docvars = TRUE)
 
+# user shorter names for documents instead of full filenames
+docnames(mysentences) <- paste(docvars(mysentences, "code"), 1:ndoc(mysentences), sep=".")
 ```
 
 Next, we want to compare the sentences based on the words they contain, so we prepare
@@ -192,10 +196,10 @@ similAlgo    <- "dice"    # one of "correlation", "cosine",
 minSimil <- 0.4
 
 mysimil <- textstat_simil(mydfm[!grepl("^BU\\.", docnames(mydfm)),],
-                          mydfm[grep("^BU\\.", docnames(mydfm)),],
+                          mydfm[grepl("^BU\\.", docnames(mydfm)),],
                           margin = "documents", # "documents" or "features"
                           method = similAlgo,
-                          min_simil = minSimil)  
+                          min_simil = minSimil)
 ```
 
 Make results available in a nice data frame:
@@ -207,7 +211,7 @@ library(dplyr)
 
 # create matrix
 mysimilmx <- as.matrix(mysimil,
-                  row.names = docnames(mydfm)[grep("^BU\\.", docnames(mydfm))]) %>%
+                  row.names = docnames(mydfm)[grepl("^BU\\.", docnames(mydfm))]) %>%
              remove_empty(c("rows", "cols"))
 
 # transpose matrix so Burma sentences are observed wrt their similaity to other texts
@@ -217,7 +221,7 @@ mysimilmx_t <- t(mysimilmx)
 mysimildf <- as.data.frame(mysimilmx_t)
 
 mysimildf$id_bu     <- rownames(mysimildf)
-mysimildf$text_bu   <- mysentences[mysimildf$id_bu]
+mysimildf$text_bu   <- as.list(mysentences[mysimildf$id_bu])
 ```
 
 Finally, we want to create reports, and these should not have just the sentence
@@ -238,15 +242,15 @@ five_largest <- apply(mysimildf[, 1:(ncol(mysimildf) - 2)], 1, FUN = function(x)
 
 # For source_1 to source_3, fill in id, text, and similarity value of the best sources
 myresultdf$id_src_1 <- unlist(lapply(five_largest, function(l) if (length(l) > 0) { names(l)[1] } else return(NA) ), use.names = FALSE )
-myresultdf$text_src_1    <- mysentences[unlist(lapply(myresultdf$id_src_1, function(l) {l[[1]]}), use.names = FALSE )]
+myresultdf$text_src_1    <- as.list(mysentences[unlist(lapply(myresultdf$id_src_1, function(l) {l[[1]]}), use.names = FALSE )])
 myresultdf$simil_value_1 <- unlist(lapply(five_largest, function(l) if (length(l) > 0) { l[[1]] } else return(NA) ), use.names = FALSE )
 
 myresultdf$id_src_2      <- unlist(lapply(five_largest, function(l) if (length(l) > 1) { names(l)[2] } else return(NA) ), use.names = FALSE )
-myresultdf$text_src_2    <- mysentences[unlist(lapply(myresultdf$id_src_2, function(l) {l[[1]]}), use.names = FALSE )]
+myresultdf$text_src_2    <- lapply(myresultdf$id_src_2, function(l) {if (is.na(l)) '' else mysentences[l] })
 myresultdf$simil_value_2 <- unlist(lapply(five_largest, function(l) if (length(l) > 1) { l[[2]] } else return(NA) ), use.names = FALSE )
 
 myresultdf$id_src_3      <- unlist(lapply(five_largest, function(l) if (length(l) > 2) { names(l)[3] } else return(NA) ), use.names = FALSE )
-myresultdf$text_src_3    <- mysentences[unlist(lapply(myresultdf$id_src_3, function(l) {l[[1]]}), use.names = FALSE )]
+myresultdf$text_src_3    <- lapply(myresultdf$id_src_3, function(l) {if (is.na(l)) '' else mysentences[l] })
 myresultdf$simil_value_3 <- unlist(lapply(five_largest, function(l) if (length(l) > 2) { l[[3]] } else return(NA) ), use.names = FALSE )
 ```
 
@@ -256,8 +260,14 @@ Now we sort and save two views.
 # Finally, sort/"arrange" two ways: by similarity value and by document id
 myresultdf_by_value  <- arrange(myresultdf, desc(simil_value_1))
 myresultdf_by_id_bu  <- arrange(myresultdf, as.integer(sub("BU.", "", id_bu)))
+```
+
+```{r}
+library('data.table')
+fwrite(myresultdf_by_value, sep = "\t", eol = "\n", file = "out/simil_by_value.tsv")
+fwrite(myresultdf_by_id_bu, sep = "\t", eol = "\n", file = "out/simil_by_text_order.tsv")
 
 # And save to two csv files
-write.table(myresultdf_by_value, sep = "\t", eol = "\n", fileEncoding = "UTF-8", file = "out/simil_by_value.tsv", row.names = FALSE)
-write.table(myresultdf_by_id_bu, sep = "\t", eol = "\n", fileEncoding = "UTF-8", file = "out/simil_by_text_order.tsv", row.names = FALSE)
+# write.table(myresultdf_by_value, sep = "\t", eol = "\n", fileEncoding = "UTF-8", file = "out/simil_by_value.tsv", row.names = FALSE)
+# write.table(myresultdf_by_id_bu, sep = "\t", eol = "\n", fileEncoding = "UTF-8", file = "out/simil_by_text_order.tsv", row.names = FALSE)
 ```
